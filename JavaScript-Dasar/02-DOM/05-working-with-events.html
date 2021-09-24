@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <label
+      >Square this number:
+      <input type="number" id="square-input" size="2" />
+    </label>
+    <button id="square-button">Calculate</button>
+    <br /><br />
+
+    <label
+      >Half this number:
+      <input type="number" id="half-input" size="2" />
+    </label>
+    <button id="half-button">Calculate</button>
+    <br /><br />
+
+    <label
+      >Calculate area of circle with radius:
+      <input type="number" id="area-input" size="2" />
+    </label>
+    <button id="area-button">Calculate</button>
+    <br /><br />
+    <div id="solution"></div>
+
+    <script>
+      /* let squarebtn = document.getElementById("square-button")
+      
+      squarebtn.addEventListener('click', square)
+      function square() {
+        let num = document.getElementById("square-input")
+        let result = Math.pow(num.value, 2)
+        
+        document.getElementById("solution").innerHTML = result
+      }
+      
+      let halfbtn = document.getElementById("half-button")
+      
+      halfbtn.addEventListener('click', half)
+      
+      function half() {
+        let num = document.getElementById("half-input")
+        let result = num.value/2
+        
+        document.getElementById("solution").innerHTML = result
+      }
+      
+      let areabtn = document.getElementById("area-button")
+      
+      areabtn.addEventListener('click', area)
+      function area() {
+        let radius = document.getElementById("area-input")
+        console.log(radius.value)
+        let result = Number(Math.PI.toFixed(2)) * (Math.pow(radius.value, 2))
+        
+        document.getElementById("solution").innerHTML = result
+      } */
+      
+      // FUNCTION FOR EVERY OPERATION
+      const squareNumber = num => Math.pow(num, 2)
+      
+      const halfNumber = num => num/2
+      
+      const areaOfCircle = num => (Number(Math.PI.toFixed(2)) * (Math.pow(num, 2)))
+      
+      // EVENT LISTENER
+      let squarebtn = document.getElementById("square-button")
+      squarebtn.addEventListener('click', function() {
+        let input = document.getElementById("square-input").value
+        document.getElementById("solution").innerHTML = squareNumber(input)
+      })
+      
+      let halfbtn = document.getElementById("half-button")
+      halfbtn.addEventListener('click', function() {
+        let input = document.getElementById("half-input").value
+        document.getElementById("solution").innerHTML = halfNumber(input)
+      })
+      
+      let areabtn = document.getElementById("area-button")
+      areabtn.addEventListener('click', function() {
+        let input = document.getElementById("area-input").value
+        document.getElementById("solution").innerHTML = areaOfCircle(input)
+      })
+      
+
+    </script>
+  </body>
+</html>

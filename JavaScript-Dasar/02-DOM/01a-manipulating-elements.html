@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>About Me</title>
+</head>
+
+<style>
+  .listitem {
+    color: red;
+  }
+</style>
+<body>
+  <h1>About Me</h1>
+  
+  <ul>
+    <li>Nickname: <span id="nickname"></span></li>
+    <li>Age:  <span id="age"></span></li>
+    <li>Hometown: <span id="hometown"></span></li>
+   </ul>
+  
+  <script>
+    document.body.setAttribute("style", "font-family: Arial, sans-serif")
+    document.getElementById("nickname").innerHTML = "Jessi"
+    document.getElementById("age").innerHTML = "21"
+    document.getElementById("hometown").innerHTML = "Tapaktuan"
+
+    let li = document.getElementsByTagName("li")
+    for(i=0; i<li.length; i++) {
+      li[i].setAttribute("class", "listitem")
+    }
+
+    let image = document.createElement("img")
+    image.setAttribute("src", "https://images.pexels.com/photos/1845534/pexels-photo-1845534.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+    let parent = document.body
+    parent.insertBefore(image, parent.lastElementChild)
+  </script>
+ </body>
+</html>

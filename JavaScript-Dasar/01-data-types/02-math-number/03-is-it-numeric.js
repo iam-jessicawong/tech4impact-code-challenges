@@ -1,4 +1,12 @@
-const isItNumeric = input => !isNaN(input)
+// const isItNumeric = input => isNaN(input)
+function isItNumeric(num) {
+  if(isNaN(num) || num == " ") {
+    return false
+  }
+  else {
+    return true
+  }
+}
 
 console.log(isItNumeric(12))
 console.log(isItNumeric('abcd'))
